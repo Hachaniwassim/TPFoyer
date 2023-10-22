@@ -1,10 +1,8 @@
 package tn.esprit.applicationfoyer.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 import java.util.Set;
@@ -12,18 +10,21 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Etudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEtudiant;
-    private String nomEt;
-    private String prenomEt;
-    private Long cin;
-    private String ecole;
-    private Date dateNaissance;
+     Long idEtudiant;
+     String nomEt;
+     String prenomEt;
+     Long cin;
+     String ecole;
+     Date dateNaissance;
 
+    @ToString.Exclude
     @ManyToMany(mappedBy = "Etudiant")
-    private Set<Reservation> Reservation;
+     Set<Reservation> Reservation;
 }

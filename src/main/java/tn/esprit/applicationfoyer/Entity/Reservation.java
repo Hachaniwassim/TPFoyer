@@ -1,10 +1,8 @@
 package tn.esprit.applicationfoyer.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 import java.util.Set;
@@ -12,14 +10,17 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Reservation {
     @Id
-    private String idReservation;
-    private Date anneeUniversitaire;
-    private boolean estValide;
+     String idReservation;
+     Date anneeUniversitaire;
+     boolean estValide;
 
+    @ToString.Exclude
     @ManyToMany
-    private Set<Etudiant> Etudiant;
+     Set<Etudiant> Etudiant;
 }

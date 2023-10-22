@@ -1,23 +1,24 @@
 package tn.esprit.applicationfoyer.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUniversite;
-    private String nomUniversite;
-    private String adresse;
+     Long idUniversite;
+     String nomUniversite;
+     String adresse;
 
+    @ToString.Exclude
     @OneToOne
-    private Foyer Foyer;
+     Foyer Foyer;
 }

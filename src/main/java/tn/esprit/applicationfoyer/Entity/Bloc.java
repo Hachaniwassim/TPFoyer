@@ -1,28 +1,30 @@
 package tn.esprit.applicationfoyer.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Bloc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idBloc;
-    private String nomBloc;
-    private Long capaciteBloc;
+     Long idBloc;
+     String nomBloc;
+     Long capaciteBloc;
 
+     @ToString.Exclude
     @OneToMany(mappedBy = "Bloc")
-    private Set<Chambre> Chambre;
+     Set<Chambre> Chambre;
 
+    @ToString.Exclude
     @ManyToOne
     Foyer Foyer;
 }

@@ -1,31 +1,33 @@
 package tn.esprit.applicationfoyer.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Chambre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idchambre;
+     Long idchambre;
 
-    private Long Numerochambre;
+     Long Numerochambre;
 
     @Enumerated(EnumType.STRING)
-    private TypeChambre TypeC;
+     TypeChambre TypeC;
 
+    @ToString.Exclude
     @OneToMany
-    private Set<Reservation> Reservation;
+     Set<Reservation> reservations;
 
+    @ToString.Exclude
     @ManyToOne
     Bloc Bloc;
 }
