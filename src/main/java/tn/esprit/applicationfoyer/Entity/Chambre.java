@@ -18,10 +18,10 @@ public class Chambre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      Long idchambre;
 
-     Long Numerochambre;
+     Long numerochambre;
 
     @Enumerated(EnumType.STRING)
-     TypeChambre TypeC;
+     TypeChambre typeC;
 
     @ToString.Exclude
     @OneToMany
