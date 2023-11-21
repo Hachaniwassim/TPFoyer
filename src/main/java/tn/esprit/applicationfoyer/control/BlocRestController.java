@@ -23,7 +23,7 @@ public class BlocRestController {
     }
 
     // http://localhost:8089/tpfoyer/chambre/retrieve-chambre/8
-    @GetMapping("/retrieve-bloc/{chambre-id}")
+    @GetMapping("/retrieve-bloc/{bloc-id}")
     public Bloc retrieveBloc(@PathVariable("bloc-id") Long chId) {
         Bloc bloc = blocService.retrieveBloc(chId);
         return bloc;

@@ -20,7 +20,6 @@ public class BlocServiceImpl implements IBlocService {
 
     @Scheduled(fixedDelay = 60000)
     public List<Bloc> retrieveAllBlocs() {
-
         List<Bloc> ListB = blocRepository.findAll();
         log.info("taille totale : " + ListB.size());
         for (Bloc b: ListB) {
@@ -28,6 +27,8 @@ public class BlocServiceImpl implements IBlocService {
         }
         return ListB;
     }
+
+
     public Bloc retrieveBloc(Long idBloc) {
         return blocRepository.findById(idBloc).get();
     }
