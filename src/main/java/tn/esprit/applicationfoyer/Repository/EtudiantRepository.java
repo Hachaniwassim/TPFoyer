@@ -6,4 +6,6 @@ import tn.esprit.applicationfoyer.Entity.Etudiant;
 
 @Repository
 public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
+
+
 }

@@ -25,6 +25,6 @@ public class Etudiant {
      Date dateNaissance;
 
     @ToString.Exclude
-    @ManyToMany(mappedBy = "Etudiant")
-     Set<Reservation> Reservation;
+    @ManyToMany(mappedBy = "etudiant")
+     Set<Reservation> reservation;
 }

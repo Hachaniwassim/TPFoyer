@@ -23,12 +23,12 @@ public class Foyer {
      Long capaciteFoyer;
 
     @ToString.Exclude
-    @OneToOne(mappedBy = "Foyer")
+    @OneToOne(mappedBy = "foyer")
      Universite Universite;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "Foyer")
-     Set<Bloc> Bloc;
+    @OneToMany(mappedBy = "foyer")
+     Set<Bloc> bloc;
 
 
 }

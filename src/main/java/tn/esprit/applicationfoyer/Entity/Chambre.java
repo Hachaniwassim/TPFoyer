@@ -29,5 +29,5 @@ public class Chambre {
 
     @ToString.Exclude
     @ManyToOne
-    Bloc Bloc;
+    Bloc bloc;
 }

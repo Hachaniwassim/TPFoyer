@@ -21,10 +21,10 @@ public class Bloc {
      Long capaciteBloc;
 
      @ToString.Exclude
-    @OneToMany(mappedBy = "Bloc")
-     Set<Chambre> Chambre;
+    @OneToMany(mappedBy = "bloc")
+     Set<Chambre> chambre;
 
     @ToString.Exclude
-    @ManyToOne
-    Foyer Foyer;
+    @ManyToOne(cascade = CascadeType.ALL)
+    Foyer foyer;
 }

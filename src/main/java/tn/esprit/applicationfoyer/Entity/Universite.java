@@ -20,5 +20,5 @@ public class Universite {
 
     @ToString.Exclude
     @OneToOne
-     Foyer Foyer;
+     Foyer foyer;
 }
